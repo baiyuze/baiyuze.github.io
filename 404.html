@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex">
+  <title>隔空贴 PasteFerry</title>
+  <script>
+    // 旧网址 /copysync/… 换成 /pasteferry/…，其余一律回到首页
+    var p = location.pathname;
+    location.replace(p.indexOf("/copysync") === 0
+      ? "/pasteferry" + p.slice("/copysync".length) + location.search + location.hash
+      : "/pasteferry/");
+  </script>
+</head>
+<body><p><a href="/pasteferry/">隔空贴 PasteFerry</a></p></body>
+</html>
