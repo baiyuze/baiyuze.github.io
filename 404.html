@@ -5,12 +5,12 @@
   <meta name="robots" content="noindex">
   <title>隔空贴 PasteFerry</title>
   <script>
-    // 旧网址 /copysync/… 换成 /pasteferry/…，其余一律回到首页
-    var p = location.pathname;
-    location.replace(p.indexOf("/copysync") === 0
-      ? "/pasteferry" + p.slice("/copysync".length) + location.search + location.hash
-      : "/pasteferry/");
+    (function () {
+      var prefix = /^\/(?:copysync|pasteferry)(?=\/|$)/.exec(location.pathname);
+      var path = prefix ? location.pathname.slice(prefix[0].length) || "/" : "/";
+      location.replace("https://pasteferry.cc" + path + location.search + location.hash);
+    })();
   </script>
 </head>
-<body><p><a href="/pasteferry/">隔空贴 PasteFerry</a></p></body>
+<body><p><a href="https://pasteferry.cc/">隔空贴 PasteFerry</a></p></body>
 </html>
